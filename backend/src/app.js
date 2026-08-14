@@ -1,4 +1,7 @@
+const express = require('express');
 const cors = require('cors');
+
+const app = express();
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -21,3 +24,5 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());
+module.exports = app;
