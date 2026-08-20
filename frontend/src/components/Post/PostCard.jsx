@@ -1,10 +1,19 @@
+
+import { Link } from "react-router-dom";
 function PostCard({ post }) {
 
     return (
 
         <article className="post-card">
 
-            <h3>{post.title}</h3>
+            <h3>
+                <Link to={`/posts/${post._id}`}>
+                     
+                     {post.title}
+
+                </Link>
+            
+            </h3>
 
             <p>{post.excerpt}</p>
 

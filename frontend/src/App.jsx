@@ -6,6 +6,7 @@ import Posts from './pages/Posts';
 import About from './pages/About';
 import PostDetail from './pages/PostDetail';
 import CreatePost from './pages/CreatePostForm';
+import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 
 
@@ -24,6 +25,7 @@ function App() {
                                                       setPosts={setPosts}
                                                       />} />
                 <Route path="about" element={<About />} />
+                <Route path="login" element={<Login />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

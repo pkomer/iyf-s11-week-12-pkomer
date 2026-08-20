@@ -76,7 +76,7 @@ export const postsAPI = {
     })
 };
 
-
+// Comments API
 export const commentsAPI = {
     getByPost: (postId) => request(`/posts/${postId}/comments`),
     

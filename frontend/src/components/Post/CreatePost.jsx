@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { postsAPI } from "../../services/api";
 
-function CreatePost ({ posts, setPosts}) {
+function CreatePost() {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const navigate = useNavigate();
     
 
-        function handleSubmit(e) {
+        async function handleSubmit(e) {
 
             e.preventDefault();
 
@@ -17,8 +18,12 @@ function CreatePost ({ posts, setPosts}) {
                  content: content
             };
 
-            setPosts([...posts, newPost]);
-            navigate("/posts");
+            try {
+                await postsAPI.create(newPost);
+                navigate("/posts");
+            }  catch (error) {
+                 console.error(error);
+            }
 
         }
 

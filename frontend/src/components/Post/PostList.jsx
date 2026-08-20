@@ -1,6 +1,7 @@
 import { useState, useEffect }from "react";
-import PostCard from "./PostCard";
+import { postsAPI } from "../../services/api";
 
+import PostCard from "./PostCard";
 
     function PostList() {
     const [posts, setPosts] = useState([]);
@@ -13,15 +14,7 @@ import PostCard from "./PostCard";
                 setLoading(true);
                 setError(null);
                 
-                const response = await fetch(
-                    'https://jsonplaceholder.typicode.com/posts'
-                );
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch posts');
-                }
-                
-                const data = await response.json();
+                const data = await postsAPI.getAll();
                 setPosts(data);  
                 
             } catch (err) {
@@ -45,7 +38,7 @@ import PostCard from "./PostCard";
 
              <PostCard
 
-               key={post.id}
+               key={post._id}
 
                post={post}
 

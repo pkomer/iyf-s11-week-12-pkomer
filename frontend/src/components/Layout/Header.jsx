@@ -15,13 +15,15 @@ function Header () {
         
               <nav>
                   <Link to="/">Home</Link>
+
                   <Link to="/posts">Posts</Link>
+
                   <Link to="/create-post">Create Post</Link>
+
                   <Link to="/about">About</Link>
+                  
+                  <Link to="/login">Log In</Link>
                 </nav>
-        
-        
-                <button>Log In</button>
         
             </div>
 

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -108,4 +112,45 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.navigation {
+     position: relative;
+     padding: 20px;
+     min-height: 80px;
+
+}
+
+.navigation h1 {
+    margin: 0;
+    text-align: center;
+     
+}
+
+.header-links {
+    position: absolute;
+    left: 20px;
+    top: 95px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+.header-links nav {
+    display: flex;
+    align-items: center;
+    gap:10px;
+
+}
+
+.header-links nav a:not(:last-child)::after {
+      content: " | ";
+      margin-left: 10px;
+      margin-right: 10px;
+}
+
+.header-links button::before { 
+      content: " | ";
+      margin-left: 10px;
+      margin-right: 10px;
+
 }

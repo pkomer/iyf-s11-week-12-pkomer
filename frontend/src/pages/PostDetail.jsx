@@ -6,7 +6,7 @@ function PostDetail() {
     const [post, setPost] = useState(null);
     
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+        fetch(`https://community-hub-api-iko4.onrender.com/api/posts/${postId}`)
             .then(res => res.json())
             .then(data => setPost(data));
     }, [postId]);
@@ -17,7 +17,7 @@ function PostDetail() {
         <article>
             <Link to="/posts">&larr; Back to Posts</Link>
             <h1>{post.title}</h1>
-            <p>{post.body}</p>
+            <p>{post.content}</p>
         </article>
     );
 }
