@@ -1,4 +1,4 @@
-# Week 12: CommunityHub
+# Week 12: Deployment & Final Project
 
 ## Author
 
